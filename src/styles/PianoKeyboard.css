@@ -1,0 +1,31 @@
+
+
+.keyboard {
+    background-color: #61dafb;
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 50%;
+    width: 90%;
+    display: flex;
+}
+
+.whiteKey {
+    position: relative;
+    border: solid black 1px;
+    z-index: 1;
+    width: 100.8px;
+    margin: 0 auto 0 auto;
+}
+
+.blackKey {
+    position: relative;
+    z-index: 2;
+    max-height: 60%;
+
+    margin: 0 -25.2px 0 -25.2px;
+
+}
