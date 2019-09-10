@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/seaweber/Bryte/static/css/main.97de7ec1.chunk.css",
+    "main.css": "/seaweber/Bryte/static/css/main.47e12389.chunk.css",
     "main.js": "/seaweber/Bryte/static/js/main.9f3b166e.chunk.js",
     "main.js.map": "/seaweber/Bryte/static/js/main.9f3b166e.chunk.js.map",
     "runtime~main.js": "/seaweber/Bryte/static/js/runtime~main.fd682c25.js",
@@ -8,8 +8,8 @@
     "static/js/2.474242db.chunk.js": "/seaweber/Bryte/static/js/2.474242db.chunk.js",
     "static/js/2.474242db.chunk.js.map": "/seaweber/Bryte/static/js/2.474242db.chunk.js.map",
     "index.html": "/seaweber/Bryte/index.html",
-    "precache-manifest.3ec97f23ab9fd1839a48c53b8231cd7b.js": "/seaweber/Bryte/precache-manifest.3ec97f23ab9fd1839a48c53b8231cd7b.js",
+    "precache-manifest.5f9651bf70a54d6e33559354b118fd77.js": "/seaweber/Bryte/precache-manifest.5f9651bf70a54d6e33559354b118fd77.js",
     "service-worker.js": "/seaweber/Bryte/service-worker.js",
-    "static/css/main.97de7ec1.chunk.css.map": "/seaweber/Bryte/static/css/main.97de7ec1.chunk.css.map"
+    "static/css/main.47e12389.chunk.css.map": "/seaweber/Bryte/static/css/main.47e12389.chunk.css.map"
   }
 }
