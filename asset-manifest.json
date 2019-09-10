@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/seaweber/Bryte/static/css/main.2cce8147.chunk.css",
+    "main.js": "/seaweber/Bryte/static/js/main.15fa346d.chunk.js",
+    "main.js.map": "/seaweber/Bryte/static/js/main.15fa346d.chunk.js.map",
+    "runtime~main.js": "/seaweber/Bryte/static/js/runtime~main.fd682c25.js",
+    "runtime~main.js.map": "/seaweber/Bryte/static/js/runtime~main.fd682c25.js.map",
+    "static/js/2.55cfac2e.chunk.js": "/seaweber/Bryte/static/js/2.55cfac2e.chunk.js",
+    "static/js/2.55cfac2e.chunk.js.map": "/seaweber/Bryte/static/js/2.55cfac2e.chunk.js.map",
+    "index.html": "/seaweber/Bryte/index.html",
+    "precache-manifest.57080304b2616e3cd44c8b41c6367492.js": "/seaweber/Bryte/precache-manifest.57080304b2616e3cd44c8b41c6367492.js",
+    "service-worker.js": "/seaweber/Bryte/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/seaweber/Bryte/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/seaweber/Bryte/static/media/logo.5d5d9eef.svg"
+  }
+}
