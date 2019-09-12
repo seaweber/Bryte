@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/BlackKey.css";
 
 function BlackKey ( props ) {
-
     return (
-        <div className="blackKey">
+        <div className={'key blackKey'}>
 
         </div>
     );

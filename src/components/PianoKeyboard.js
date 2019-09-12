@@ -11,6 +11,29 @@ function PianoKeyboard ( props ) {
     const [width, setWidth] = useState(0);
 
     /*
+     * Generates a collection of keys representing the connected midi keyboard
+     */
+    function generateKeys() {
+
+        /*
+         * By convention, keyboards contain, in order, 'n' octaves + 1 white key
+         * Calculate connected midi keyboard's number of octaves
+         */
+        let octaves = ( Number.parseInt(props.keys) - 1 ) / 12;
+
+        let notes = [];
+
+        // iterate through octaves, incrementing octave level
+        for (let index = 1; index <= octaves; index++) {
+            notes.push(octave(index));
+        }
+        // add extra white key
+        notes.push(<WhiteKey/>);
+
+        return notes;
+    }
+
+    /*
      * Produces a collection of <Key> components to represent an octave
      */
     function octave ( level ) {
@@ -42,29 +65,6 @@ function PianoKeyboard ( props ) {
                 ( <WhiteKey/> ) :
                 ( <BlackKey/> )
         });
-    }
-
-    /*
-     * Generates a collection of keys representing the connected midi keyboard
-     */
-    function generateKeys() {
-
-        /*
-         * By convention, keyboards contain, in order, 'n' octaves + 1 white key
-         * Calculate connected midi keyboard's number of octaves
-         */
-        let octaves = ( Number.parseInt(props.keys) - 1 ) / 12;
-
-        let notes = [];
-
-        // iterate through octaves, incrementing octave level
-        for (let index = 1; index <= octaves; index++) {
-            notes.push(octave(index));
-        }
-        // add extra white key
-        notes.push(<WhiteKey/>);
-
-        return notes;
     }
 
     return (
