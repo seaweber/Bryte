@@ -1,4 +1,29 @@
 .blackKey {
     background-color: black;
-    height: 100%;
+    max-height: 60%;
+    z-index: 2;
+}
+
+/* 25 keys */
+.key:first-child:nth-last-child(25) ~ .blackKey {
+    width: 3vw;
+    margin: 0 -1.5vw 0 -1.5vw;
+}
+
+/* 37 keys */
+.key:first-child:nth-last-child(37) ~ .blackKey {
+    width: 2.14vw;
+    margin: 0 -1.07vw 0 -1.07vw;
+}
+
+/* 49 keys */
+.key:first-child:nth-last-child(49) ~ .blackKey {
+    width: 1.61vw;
+    margin: 0 -.8vw 0 -.8vw;
+}
+
+/* 61 keys */
+.key:first-child:nth-last-child(61) ~ .blackKey {
+    width: 1.286vw;
+    margin: 0 -.64vw 0 -.64vw;
 }

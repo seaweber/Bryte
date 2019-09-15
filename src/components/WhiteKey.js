@@ -4,9 +4,7 @@ import "../styles/WhiteKey.css";
 function WhiteKey ( props ) {
     return (
         <div className={'key whiteKey'}>
-
         </div>
-
     );
 
 }
