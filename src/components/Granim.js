@@ -58,7 +58,7 @@ export default class Granim extends Component {
     }
 
     render() {
-        const { id, className, style } = this.props;
+        const { id, className } = this.props;
         return <canvas id={id} className={className} />
     }
 }

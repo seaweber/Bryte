@@ -1,5 +1,7 @@
 const initialState = {
-    brightnessMap: {}
+    brightnessMap: {
+        //C3: true
+    }
 }
 
 function brightnessReducer(state = initialState, action) {

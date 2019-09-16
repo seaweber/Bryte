@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import "../styles/PianoKeyboard.css";
 
 import Key from "./PianoKey";
-import store from "../store/store";
 
 const mapStateToProps = state => {
     return { brightnessMap: state.brightnessMap };
@@ -13,8 +12,9 @@ const mapStateToProps = state => {
 
 function PianoKeyboard ( props ) {
 
-    const [brightnessMap, updateBrightnessMap] = useState(props.brightnessMap);
+    const [brightnessMap] = useState(props.brightnessMap);
 
+    // TODO: Feed in through props after setup wizard
     let lowestNote = 48, highestNote = 72;
 
     let blackKeys = ['Db', 'Eb', 'Gb', 'Ab', 'Bb'];
@@ -25,29 +25,36 @@ function PianoKeyboard ( props ) {
     function generateKeys() {
 
         let keyboard = new Array(
-            (highestNote - lowestNote) + 1)
+            ( highestNote - lowestNote ) + 1)
             .fill(undefined)
             .map((item, index) =>
+
+                /*
+                 * convert midi note to musical notation
+                 * ex: 48 -> C3
+                 */
                 Tonal.Note.fromMidi(lowestNote + index)
             );
-        return keyboard;
+
+        return keyboard.map(( note ) => {
+            return <Key note={note}
+                        brightnessMap={brightnessMap}
+                        keyColor={
+                            blackKeys.includes(
+                                // strip octave number
+                                note.replace(/[0-9]/g, '')
+                            ) ? 'blackKey' : 'whiteKey'
+                        }
+                    />
+
+        });
     }
 
     return (
         <div className="keyboard">
             {
                 generateKeys()
-                    .map(( note ) => {
-                        return <Key note={note}
-                            brightnessMap={brightnessMap}
-                            className={
-                                blackKeys.includes(
-                                    note.replace(/[0-9]/g, '')
-                                ) ? 'blackKey' : 'whiteKey'
-                            }
-                        />
 
-                    })
             }
         </div>
     )
