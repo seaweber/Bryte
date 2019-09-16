@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import PropsType from 'prop-types'
-import granim from 'granim'
+import React, { Component } from 'react';
+import PropsType from 'prop-types';
+import granim from 'granim';
 
 export default class Granim extends Component {
     static propsType = {
-        id: PropsType.string,
+        className: PropsType.string,
         name: PropsType.string,
         elToSetClassOn: PropsType.string,
-        direction: PropsType.oneOf(
+        direction: PropsType.oneOf([
             'diagonal',
             'left-right',
             'top-bottom',
             'radial'
-        ),
+        ]),
         isPausedWhenNotInView: PropsType.bool,
         opacity: PropsType.arrayOf(PropsType.number).isRequired,
         stateTransitionSpeed: PropsType.number,
@@ -29,6 +29,7 @@ export default class Granim extends Component {
         // default
         return {
             element: `#${this.props.id}`,
+            className: this.props.className,
             opacity: [1, 1],
             states: {
                 [this.props.defaultStateName]: {
@@ -57,7 +58,7 @@ export default class Granim extends Component {
     }
 
     render() {
-        const { id, style } = this.props
-        return <canvas id={id} style={style || this.style} />
+        const { id, className, style } = this.props;
+        return <canvas id={id} className={className} />
     }
 }

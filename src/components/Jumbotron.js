@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../styles/Jumbotron.css';
-import Granim from './Granim';
 
 import driver from '../services/MidiDeviceDriver'
 
@@ -12,7 +11,6 @@ function Jumbotron() {
         <div className='jumbotron'>
             {message}
             {driver.detectAndConnect()}
-            <Granim id="granim"/>
         </div>
     )
 }

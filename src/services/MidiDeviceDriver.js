@@ -1,14 +1,26 @@
-import synth from './Synthesizer';
+import Synth from './Synthesizer';
+import * as Tonal from "tonal"
+import { TOGGLE_BRIGHTNESS } from "../store/actions";
+import store from '../store/store';
+
+
+function sendBrightnessUpdate(note, on) {
+    store.dispatch({type: TOGGLE_BRIGHTNESS, note, on})
+}
 
 function onMIDIMessage (message) {
     let frequency = midiNoteToFrequency(message.data[1]);
+    let note = Tonal.Note.fromMidi(message.data[1]);
 
     if (message.data[0] === 144 && message.data[2] > 0) {
-        synth.playNote(frequency);
+        Synth.playNote(frequency);
+        sendBrightnessUpdate(note, true);
     }
 
     if (message.data[0] === 128 || message.data[2] === 0) {
-        synth.stopNote(frequency);
+        Synth.stopNote(frequency);
+        sendBrightnessUpdate(note, false);
+
     }
 }
 
