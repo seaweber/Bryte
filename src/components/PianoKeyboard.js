@@ -1,18 +1,17 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import * as Tonal from "tonal"
-import { connect } from 'react-redux';
 
 import "../styles/PianoKeyboard.css";
 
 import Key from "./PianoKey";
 
-const mapStateToProps = state => {
-    return { brightnessMap: state.brightnessMap };
-};
-
 function PianoKeyboard ( props ) {
 
-    const [brightnessMap] = useState(props.brightnessMap);
+    const [activeKeys, setActiveKeys] = useState(props.activeKeys);
+
+    useEffect( () => {
+        setActiveKeys(props.activeKeys);
+    }, [props.activeKeys, activeKeys]);
 
     // TODO: Feed in through props after setup wizard
     let lowestNote = 48, highestNote = 72;
@@ -20,7 +19,7 @@ function PianoKeyboard ( props ) {
     let blackKeys = ['Db', 'Eb', 'Gb', 'Ab', 'Bb'];
 
     /*
-     * Generates a collection of keys representing the connected midi keyboard from the provided lowest and highest notes
+     * Generates a collection of PianoKey components representing the connected midi keyboard from the provided lowest and highest notes
      */
     function generateKeys() {
 
@@ -38,7 +37,7 @@ function PianoKeyboard ( props ) {
 
         return keyboard.map(( note ) => {
             return <Key note={note}
-                        brightnessMap={brightnessMap}
+                        active={activeKeys.includes(note)}
                         keyColor={
                             blackKeys.includes(
                                 // strip octave number
@@ -46,18 +45,14 @@ function PianoKeyboard ( props ) {
                             ) ? 'blackKey' : 'whiteKey'
                         }
                     />
-
         });
     }
 
     return (
         <div className="keyboard">
-            {
-                generateKeys()
-
-            }
+            { generateKeys() }
         </div>
     )
 }
 
-export default connect(mapStateToProps)(PianoKeyboard);
+export default PianoKeyboard;

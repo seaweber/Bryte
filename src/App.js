@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.css';
 
-
-import PianoKeyboard from "./components/PianoKeyboard"
+import PianoKeyboard from "./components/PianoKeyboard";
 import Jumbotron from "./components/Jumbotron";
+import WithMidiConnection from "./components/WithMidiConnection";
 
 function App() {
+
   return (
-    <div className="App">
-        <Jumbotron/>
-        <PianoKeyboard/>
-    </div>
+      <div className="App">
+
+          { /* Wrap piano in order to pass down midi events */ }
+          <WithMidiConnection>
+              <PianoKeyboard/>
+          </WithMidiConnection>
+          <Jumbotron/>
+      </div>
   );
 }
 
