@@ -24,7 +24,6 @@ class WithMidiConnection extends React.Component {
 
     onMIDIMessage = message => {
 
-        let frequency = Tonal.Note.midiToFreq(message.data[1]);
         let note = Tonal.Note.fromMidi(message.data[1]);
 
         // key on
@@ -39,7 +38,6 @@ class WithMidiConnection extends React.Component {
     }
 
     detectAndConnect () {
-        console.log('called!!!');
 
         let self = this;
 
@@ -84,14 +82,16 @@ class WithMidiConnection extends React.Component {
     componentDidMount() {
         this.detectAndConnect();
     }
+
     componentWillUnmount() {
-        // window.removeEventListener('keypress', this.handleKeypress);
+
     }
+
     render() {
         let self = this;
         return (
             <div>
-                {
+                {   /* Iterate over arbitrary children, passing the activeKeys prop to each one */
                     React.Children.map(this.props.children, function (child) {
                         return React.cloneElement(child, { activeKeys: self.state.activeKeys });
                     })

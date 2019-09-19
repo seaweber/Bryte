@@ -10,7 +10,7 @@ function App() {
   return (
       <div className="App">
 
-          { /* Wrap piano in order to pass down midi events */ }
+          { /* Wrap piano in order to propagate midi events */ }
           <WithMidiConnection>
               <PianoKeyboard/>
           </WithMidiConnection>

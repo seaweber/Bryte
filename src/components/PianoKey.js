@@ -34,9 +34,16 @@ function PianoKey ( props ) {
 
     }, [props.active, active]);
 
-    // conditionally render gradient based on props
+    /* conditionally render gradient based on state.active */
     function BrightnessGradient (size) {
         if(active) {
+
+            /*
+             * Granim is a canvas element under the hood.
+             * Canvas elements cannot be sized with CSS.
+             * Therefore, pass the width and size of Granim's
+             * container (PianoKey) as props.
+             */
             return <Granim
                     width={size.width}
                     height={size.height}
@@ -45,6 +52,10 @@ function PianoKey ( props ) {
         }
     }
 
+    /*
+     * SizeMe pre-renders an invisible component to determine the size of a container with its contents.
+     * This is needed to pass these dimensions down to the Granim element.
+     */
     return (
         <SizeMe monitorHeight>
             {

@@ -19,7 +19,8 @@ function PianoKeyboard ( props ) {
     let blackKeys = ['Db', 'Eb', 'Gb', 'Ab', 'Bb'];
 
     /*
-     * Generates a collection of PianoKey components representing the connected midi keyboard from the provided lowest and highest notes
+     * Generates a collection of PianoKey components representing
+     * the connected midi keyboard from the provided lowest and highest notes
      */
     function generateKeys() {
 
@@ -40,7 +41,11 @@ function PianoKeyboard ( props ) {
                         active={activeKeys.includes(note)}
                         keyColor={
                             blackKeys.includes(
-                                // strip octave number
+
+                                /*
+                                 * strip octave number
+                                 * ex: C3 -> C
+                                 */
                                 note.replace(/[0-9]/g, '')
                             ) ? 'blackKey' : 'whiteKey'
                         }
