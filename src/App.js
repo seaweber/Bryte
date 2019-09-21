@@ -13,8 +13,8 @@ function App() {
           { /* Wrap piano in order to propagate midi events */ }
           <WithMidiConnection>
               <PianoKeyboard/>
+              <Jumbotron/>
           </WithMidiConnection>
-          <Jumbotron/>
       </div>
   );
 }

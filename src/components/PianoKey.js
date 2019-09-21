@@ -1,38 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { SizeMe } from 'react-sizeme';
 import "../styles/PianoKey.css";
 import Granim from './Granim';
-import { PolySynth } from 'tone';
+import synth from '../services/Synth';
 
 function PianoKey ( props ) {
 
     const [active, setActive] = useState(props.active);
-
-    // useEffect( () => {
-    //     if(props.active === true && active === false) {
-    //         console.log('attack');
-    //         synth.triggerAttack(props.note);
-    //         setActive(props.active);
-    //     }
-    //     else if (props.active === false && active === true) {
-    //         console.log('release')
-    //         synth.triggerRelease(props.note);
-    //         setActive(props.active)
-    //     }
-    // });
+    const isFirstRun = useRef(true);
 
     useEffect( () => {
-        let synth = new PolySynth().toMaster();
+        /* prevent useEffect from running on initial render */
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
         props.active ?
-            synth.triggerAttack(props.note)
+           synth.triggerAttack(props.note)
             : synth.triggerRelease(props.note);
 
         props.active ?
-            console.log('attack') : console.log('release');
+            console.log(props.note + ' attack') : console.log(props.note + ' release');
 
         setActive(props.active);
-
-    }, [props.active, active]);
+    }, [props.active, props.note]);
 
     /* conditionally render gradient based on state.active */
     function BrightnessGradient (size) {

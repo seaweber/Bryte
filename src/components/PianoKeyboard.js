@@ -11,7 +11,7 @@ function PianoKeyboard ( props ) {
 
     useEffect( () => {
         setActiveKeys(props.activeKeys);
-    }, [props.activeKeys, activeKeys]);
+    }, [props.activeKeys]);
 
     // TODO: Feed in through props after setup wizard
     let lowestNote = 48, highestNote = 72;
@@ -37,7 +37,8 @@ function PianoKeyboard ( props ) {
             );
 
         return keyboard.map(( note ) => {
-            return <Key note={note}
+            return <Key key={note}
+                        note={note}
                         active={activeKeys.includes(note)}
                         keyColor={
                             blackKeys.includes(

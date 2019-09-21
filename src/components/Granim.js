@@ -54,7 +54,7 @@ export default class Granim extends Component {
     }
 
     componentDidMount() {
-        this.granim = new granim(Object.assign({}, this.config, this.props))
+        this.granim = new granim(Object.assign({}, this.config, this.props));
     }
 
     render() {

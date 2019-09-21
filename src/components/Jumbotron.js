@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+//import * as Tonal from 'tonal';
 import '../styles/Jumbotron.css';
 
-function Jumbotron() {
+function Jumbotron( props ) {
 
-    const [message] = useState('No supported MIDI devices detected...')
+    const [activeKeys, setActiveKeys]
+        = useState(props.activeKeys);
+
+    useEffect( () => {
+        setActiveKeys(props.activeKeys);
+    }, [props.activeKeys]);
+
+    // function inferChord( activeKeys ) {
+    //     return Tonal.chord(Tonal.PcSet.chroma(activeKeys));
+    // }
 
     return (
         <div className='jumbotron'>
-            {message}
+            {activeKeys}
         </div>
     )
 }

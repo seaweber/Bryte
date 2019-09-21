@@ -10,7 +10,7 @@ class WithMidiConnection extends React.Component {
 
     activateKey = key => {
         const newState = this.state;
-        newState.activeKeys.push(key)
+        newState.activeKeys.push(key);
         this.setState(newState);
     }
 
@@ -91,7 +91,7 @@ class WithMidiConnection extends React.Component {
         let self = this;
         return (
             <div>
-                {   /* Iterate over arbitrary children, passing the activeKeys prop to each one */
+                {   /* Iterate over arbitrary children, passing the state.activeKeys as a prop to each one */
                     React.Children.map(this.props.children, function (child) {
                         return React.cloneElement(child, { activeKeys: self.state.activeKeys });
                     })
