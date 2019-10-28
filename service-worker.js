@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/seaweber/Bryte/precache-manifest.5f9651bf70a54d6e33559354b118fd77.js"
+  "/seaweber/Bryte/precache-manifest.4a3d63f3453fcb917c9c437264c52fa7.js"
 );
 
 self.addEventListener('message', (event) => {
