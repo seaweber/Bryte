@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-//import * as Tonal from 'tonal';
+import { chord } from 'tonal-detect';
 import '../styles/Jumbotron.css';
 
 function Jumbotron( props ) {
 
-    const [activeKeys, setActiveKeys]
-        = useState(props.activeKeys);
+    const [activeKeys, setActiveKeys] = useState(props.activeKeys);
 
     useEffect( () => {
         setActiveKeys(props.activeKeys);
     }, [props.activeKeys]);
 
-    // function inferChord( activeKeys ) {
-    //     return Tonal.chord(Tonal.PcSet.chroma(activeKeys));
-    // }
+    function stripOctaveNumbers( activeKeys ) {
+        let formattedKeys = activeKeys.map( note => note.replace(/[0-9]/g, ''));
+        return formattedKeys;
+    }
 
     return (
         <div className='jumbotron'>
-            {activeKeys}
+            {/* chord(stripOctaveNumbers(activeKeys)).join(' ') */}
         </div>
     )
 }

@@ -49,7 +49,7 @@ export default class Granim extends Component {
 
     get style() {
         return {
-
+            zIndex: 10
         }
     }
 
@@ -59,6 +59,6 @@ export default class Granim extends Component {
 
     render() {
         const { id, className, width, height } = this.props;
-        return <canvas width={width} height={height} id={id} className={className} />
+        return <canvas style={this.style} width={width} height={height} id={id} className={className} />
     }
 }

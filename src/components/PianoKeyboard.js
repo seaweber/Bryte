@@ -39,7 +39,7 @@ function PianoKeyboard ( props ) {
         return keyboard.map(( note ) => {
             return <Key key={note}
                         note={note}
-                        active={activeKeys.includes(note)}
+                        activeKeys={activeKeys}
                         keyColor={
                             blackKeys.includes(
 
