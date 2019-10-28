@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/seaweber/Bryte/static/css/main.bb3d0a65.chunk.css",
-    "main.js": "/seaweber/Bryte/static/js/main.604ebea4.chunk.js",
-    "main.js.map": "/seaweber/Bryte/static/js/main.604ebea4.chunk.js.map",
-    "runtime~main.js": "/seaweber/Bryte/static/js/runtime~main.fd682c25.js",
-    "runtime~main.js.map": "/seaweber/Bryte/static/js/runtime~main.fd682c25.js.map",
-    "static/js/2.f9057843.chunk.js": "/seaweber/Bryte/static/js/2.f9057843.chunk.js",
-    "static/js/2.f9057843.chunk.js.map": "/seaweber/Bryte/static/js/2.f9057843.chunk.js.map",
-    "index.html": "/seaweber/Bryte/index.html",
-    "precache-manifest.4a3d63f3453fcb917c9c437264c52fa7.js": "/seaweber/Bryte/precache-manifest.4a3d63f3453fcb917c9c437264c52fa7.js",
-    "service-worker.js": "/seaweber/Bryte/service-worker.js",
-    "static/css/main.bb3d0a65.chunk.css.map": "/seaweber/Bryte/static/css/main.bb3d0a65.chunk.css.map"
+    "main.css": "/Bryte/static/css/main.bb3d0a65.chunk.css",
+    "main.js": "/Bryte/static/js/main.208d102a.chunk.js",
+    "main.js.map": "/Bryte/static/js/main.208d102a.chunk.js.map",
+    "runtime~main.js": "/Bryte/static/js/runtime~main.c2198b03.js",
+    "runtime~main.js.map": "/Bryte/static/js/runtime~main.c2198b03.js.map",
+    "static/js/2.f9057843.chunk.js": "/Bryte/static/js/2.f9057843.chunk.js",
+    "static/js/2.f9057843.chunk.js.map": "/Bryte/static/js/2.f9057843.chunk.js.map",
+    "index.html": "/Bryte/index.html",
+    "precache-manifest.824031a87ded446729d4d222bdba0881.js": "/Bryte/precache-manifest.824031a87ded446729d4d222bdba0881.js",
+    "service-worker.js": "/Bryte/service-worker.js",
+    "static/css/main.bb3d0a65.chunk.css.map": "/Bryte/static/css/main.bb3d0a65.chunk.css.map"
   }
 }
