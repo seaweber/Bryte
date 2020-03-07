@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import * as Tonal from "tonal"
+import { useSelector } from 'react-redux'
 
 import "../styles/PianoKeyboard.css";
 
@@ -7,11 +8,7 @@ import Key from "./PianoKey";
 
 function PianoKeyboard ( props ) {
 
-    const [activeKeys, setActiveKeys] = useState(props.activeKeys);
-
-    useEffect( () => {
-        setActiveKeys(props.activeKeys);
-    }, [props.activeKeys]);
+    const activeKeys = useSelector( state => state.activeKeys);
 
     // TODO: Feed in through props after setup wizard
     let lowestNote = 48, highestNote = 72;
@@ -37,9 +34,10 @@ function PianoKeyboard ( props ) {
             );
 
         return keyboard.map(( note ) => {
-            return <Key key={note}
-                        note={note}
-                        activeKeys={activeKeys}
+
+            return <Key key={ note }
+                        note={ note }
+                        active={ activeKeys.includes(note) }
                         keyColor={
                             blackKeys.includes(
 
